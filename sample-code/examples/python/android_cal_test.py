@@ -10,15 +10,35 @@ desired_caps['appActivity'] = '.Calculator'
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-driver.find_element_by_name("1").click()
+#Genymotion Nexus 7 code
+
+# text  - from UIA
 driver.find_element_by_name("5").click()
-driver.find_element_by_name("9").click()
-driver.find_element_by_name("delete").click()
-driver.find_element_by_name("9").click()
+driver.find_element_by_name("×").click()
 driver.find_element_by_name("5").click()
-driver.find_element_by_name("+").click()
-driver.find_element_by_name("6").click()
 driver.find_element_by_name("=").click()
+driver.find_element_by_name("clear").click()
+
+# resource id
+driver.find_element_by_id("com.android.calculator2:id/digit_7").click()
+driver.find_element_by_id("com.android.calculator2:id/op_div").click()
+driver.find_element_by_id("com.android.calculator2:id/digit_7").click()
+
+#  content-desc
+driver.find_element_by_accessibility_id("equals").click()
+
+
+
+# AVD code
+# driver.find_element_by_name("1").click()
+# driver.find_element_by_name("5").click()
+# driver.find_element_by_name("9").click()
+# driver.find_element_by_name("delete").click()
+# driver.find_element_by_name("9").click()
+# driver.find_element_by_name("5").click()
+# driver.find_element_by_name("+").click()
+# driver.find_element_by_name("6").click()
+# driver.find_element_by_name("=").click()
 
 
 driver.quit()
